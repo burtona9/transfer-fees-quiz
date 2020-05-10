@@ -53,7 +53,50 @@ table {
     margin:30px;
 }
 
+
+@font-face {
+    font-family: glitch;
+    src: url(glitch2.ttf);
+  }
+
 h1{
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:48px;
+    font-family:glitch;
+    font-size:28px;
+    animation:rattle 1s;
+    animation-play-state: running;
+    animation-iteration-count: 1;
+}
+
+@keyframes rattle{
+    0% { opacity:0 }
+    12% { opacity: .3; color:red; font-size: 32px; }
+    25% { opacity: .8; }
+    36% { opacity: .2; color:green;}
+    80% { opacity: .3; color:red }
+    85% { opacity: .8;  font-size:48px;}
+    94% { opacity: .2; color:green;}
+    100% {opacity: 1; color:black;}
+}
+
+.question {
+    font-size:26px;
+    font-family:Asap;
+}
+.answersContainer{
+    display: flex;
+    flex-direction: column;
+}
+.answer{
+    font-family:Asap;
+    font-size:22px;
+    margin:20px 10px;
+    border:dashed 1px black;
+    padding:15px;
+    display: flex;;
+}
+.answer:hover{
+    border-color:darkorange;
+}
+.heading-container{
+    height:90px;
 }

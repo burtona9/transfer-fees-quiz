@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Asap&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="questions.js"></script>
     <script src="game.js"></script>
+
 </head>
 <body>
     <div class="container">
+        <div class="heading-container">
+        <h1>LOCKDOWN</h1>
+        <h1>SUPER SOCCER QUIZ</h1>
+        </div>
         <div id="app">
+            <div v-show="!gameFinished">
+            <div class="question">
+                    {{questions[currentQuestionIndex].question}}
 
-            <h1>{{message}}</h1>
+            </div>
+           <div class="answersContainer">
+<div class="answer" v-for="(answer,index) in questions[currentQuestionIndex].answers" @click="handleAnswerSubmission(index)">
+    {{answer.option}}
+</div>
+</div>
+</div>
+<div v-show="gameFinished">
+    {{score}}
+</div>
+</div>
          </div>
 
     </div>
